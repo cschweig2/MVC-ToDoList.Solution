@@ -8,7 +8,7 @@ namespace ToDoList
   {
     public static void Main()
     {
-      // List<Item> _instances = new List<Item> { };
+      List<Item> toDoList = new List<Item> { };
       Console.WriteLine("Welcome to the To Do List!");
       Console.WriteLine("Would you like to add an item to your list or view your list? (Add/View)");
       string userInput = Console.ReadLine();
@@ -22,8 +22,11 @@ namespace ToDoList
       }
       if (userInput == "View")
       {
-        List<Item> result = Item.Description.GetAll();
-        Console.WriteLine(result.ToString());
+        List<Item> result = Item.GetAll();
+        foreach (Item item in result)
+        {
+          Console.WriteLine(item.Description);
+        }
       }
     }
   }
