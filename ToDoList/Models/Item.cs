@@ -1,4 +1,4 @@
-using Systems.Collections.Generic;
+using System.Collections.Generic;
 
 namespace ToDoList.Models
 {
@@ -15,6 +15,10 @@ namespace ToDoList.Models
     public static List<Item> GetAll()
     {
       return _instances;
+    }
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
